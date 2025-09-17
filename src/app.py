@@ -34,8 +34,8 @@ async def detect_logo(file: UploadFile = File(...)):
     if img is None:
         return DetectionResponse(detections=[])
 
-    # Предсказание с порогом уверенности 0.3
-    results = model(img, conf=0.3)
+    # Предсказание с порогом уверенности 0.1
+    results = model(img, conf=0.1)
     detections = []
 
     for box in results[0].boxes:
