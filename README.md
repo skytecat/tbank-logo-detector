@@ -184,4 +184,6 @@ print(response.json())
   
 [Веса модели](https://drive.google.com/file/d/197p59zRO_vdd6LSrkY9Ol2i4APFv1IG1/view?usp=sharing)
 
+[Ноутбук с кодом](https://colab.research.google.com/drive/1JYsFp3cmcd4uI79csl-VrUJXRSYkCL3g?usp=sharing)
+
 ---
