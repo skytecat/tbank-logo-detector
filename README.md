@@ -134,6 +134,7 @@ Template Matching (OpenCV)
 Это позволило **визуально подтвердить** корректность метрик
 
 **Анализ ошибок**
+
 Худшие предсказания:
 - Мелкие логотипы
 - Логотипы под углом или на сложном фоне
@@ -142,6 +143,41 @@ Template Matching (OpenCV)
 Добавить в датасет больше изображений с мелкими/искажёнными логотипами
 
 ## Инструкция по запуску
+
+1. Клонирование репозитория
+
+```
+git clone git@github.com:skytecat/tbank-logo-detector.git
+cd tbank-logo-detector
+```
+
+2. Сборка Docker-образа
+
+```
+docker build -t tbank-detector .
+```
+
+3. Запуск контейнера
+
+```
+docker run -p 8000:8000 --name tbank-api tbank-detector
+```
+
+4. Проверка работы
+
+```
+import requests
+
+url = "http://localhost:8000/detect"
+image_path = "путь/к/вашему/изображению.jpg"
+
+with open(image_path, 'rb') as f:
+    files = {'file': f}
+    response = requests.post(url, files=files)
+
+print("Ответ API:")
+print(response.json())
+```
 
 ## Ссылки на ресурсы
 
